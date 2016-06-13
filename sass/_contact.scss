@@ -1,0 +1,13 @@
+#contact{
+  height: 700px;
+  position: relative;
+  color: $color-secondary;
+  background: {
+    color: $color-primary;
+    image: url(/images/blur-map.png);
+    repeat: no-repeat;
+    size: 100% 700px;
+    position: bottom center;
+    attachment: fixed;
+  }
+}

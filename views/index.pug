@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  - console.log('Hi from index pug!');
+  header.head-box
+    //back
+    .head-back-img
+    //middle
+    .head-hero
+      .profile-pic.ratio.img-responsive.img-circle
+      h1.head-hero-text
+        span(style="font-weight: 300") Hi! I'm 
+        span(style="font-weight: 600") Swarnabh
+      p.head-hero-desc Senior Software Engineer<br>CDMX, Mexico
+      
+    //fore
+    .head-me-foreground
+    
+  
+  include /partials/intro.pug 
+
+  include /partials/skills.pug 
+
+  include /partials/experience.pug 
+
+  include /partials/contact.pug

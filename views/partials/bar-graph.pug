@@ -1,0 +1,81 @@
+mixin chart-data-slideshow(skills, category)
+	- var pagedArr = [];
+	- var tempArr = [];
+	each skill in skills
+		if skill.categories.indexOf(category) > -1
+			- tempArr.push(skill);
+	while tempArr.length
+		- pagedArr.push(tempArr.splice(0, 5));
+	if pagedArr.length == 1
+		ul.chart-data
+			- var i = 0;
+			while i < pagedArr[0].length
+				- var skill = pagedArr[0][i];
+				li
+					.left-bar
+					.data-bar
+						.data-label
+							span= skill.text
+					if i == pagedArr[0].length - 1
+						.right-bar
+				- i++;
+	else
+		.skill-slideshow
+			each skill_set in pagedArr
+				.skill-set
+					ul.chart-data
+						- var i = 0;
+						while i < skill_set.length
+							- var skill = skill_set[i];
+							li
+								.left-bar
+								.data-bar(data-level= skill.level*20 + "%")
+									.data-label
+										span= skill.text
+								if i == skill_set.length - 1
+									.right-bar
+							- i++;
+
+
+.skills-chart
+	ul.chart-title.list-inline(role="tablist")
+		li.active(role="presentation")
+			a(href="#ms", aria-controls="ms", role="tab", data-toggle="tab")
+				h4 #[b Microsoft] #[span(style="font-weight: 300") Technologies]
+		li(role="presentation")
+			a(href="#web", aria-controls="web", role="tab", data-toggle="tab")
+				h4 #[b Web] #[span(style="font-weight: 300") Technologies]
+		li(role="presentation")
+			a(href="#patterns", aria-controls="patterns", role="tab", data-toggle="tab")
+				h4 #[b Design] #[span(style="font-weight: 300") Patterns]
+		li(role="presentation")
+			a(href="#db", aria-controls="db", role="tab", data-toggle="tab")
+				h4 #[b Database] #[span(style="font-weight: 300") Technologies]
+		//- li(role="presentation")
+		//- 	a(href="#tools", aria-controls="tools", role="tab", data-toggle="tab")
+		//- 		h4 #[b Tools] #[span(style="font-weight: 300") & Frameworks]
+	ul.chart-legend
+		li
+			span.legend-label #[strong Uh?] #[br] Next question?
+		li
+			span.legend-label #[strong Basic], you can't #[br] always win!
+		li
+			span.legend-label #[strong Medium], I'm trying #[br] to improve
+		li
+			span.legend-label #[strong High], #[br] I m pretty good!
+		li
+			span.legend-label #[strong I'm the master], #[br] of the universe!
+
+	.tab-content
+		#ms.tab-pane.active.fade.in(role="tabpanel") 
+			+chart-data-slideshow(skills, "ms")
+
+		#web.tab-pane.fade.in(role="tabpanel") 
+			+chart-data-slideshow(skills, "web")
+
+		#patterns.tab-pane.fade.in(role="tabpanel") 
+			+chart-data-slideshow(skills, "pattern")
+
+		#db.tab-pane.fade.in(role="tabpanel") 
+			+chart-data-slideshow(skills, "db")
+

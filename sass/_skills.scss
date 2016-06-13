@@ -1,0 +1,35 @@
+#skills-edu{
+  height: auto;
+  position: relative;
+  color: white;
+  background: {
+    color: $color-primary;
+    //image: url(/images/parallax-skills.png);
+    repeat: no-repeat;
+    size: 300px 300px;
+    position: top right;
+    attachment: fixed;
+  }
+
+  .edu-panel{
+    padding-right: 40px;
+
+    .timeline{
+      .message-inner{
+        transform: translateY(300px);
+
+        &.slide{
+          transform: translateY(0px);
+        }
+      }
+    }
+  }
+}
+
+  @media(min-width: 1024px){
+    .skills-edu{
+      .skill-panel{
+          padding-left: 40px;
+      }
+    }
+  }

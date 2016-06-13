@@ -1,0 +1,82 @@
+#exp{
+	color: $color-secondary;
+	background: {
+	    image: url(/images/parallax-about.png);
+	    repeat: no-repeat;
+	    size: 400px 400px;
+	    color: #F8F8F8; //#dfdfdf
+	    position: top left;
+	    attachment: fixed;
+	}
+
+	.exp-panel{
+		padding-left: 40px;
+
+		.tab-content{
+			margin-top: 28px;
+
+			.tab-pane{
+
+				.exp-detail{
+					background-color: white;
+					height: auto;
+					padding: 10px 30px;
+
+					-webkit-box-shadow: 0px 9px 26px -4px rgba(0,0,0,0.15);
+					-moz-box-shadow: 0px 9px 26px -4px rgba(0,0,0,0.15);
+					box-shadow: 0px 9px 26px -4px rgba(0,0,0,0.15);
+
+					ul.role-desc{
+						padding-left: 1em;
+
+						li{
+							margin-bottom: 5px;
+						}
+					}
+				}
+
+				.skill-set{
+					margin-top: 10px;
+					color: white;
+					li{
+						background: $color-primary;
+						margin-left: 20px;
+						margin-bottom: 10px;
+						padding: 5px; 
+
+						-webkit-box-shadow: 11px 12px 21px -6px rgba(0,0,0,0.36);
+						-moz-box-shadow: 11px 12px 21px -6px rgba(0,0,0,0.36);
+						box-shadow: 11px 12px 21px -6px rgba(0,0,0,0.36);
+					}
+				}
+			}
+		}
+	}
+
+	.exp-timeline{
+		padding-right: 40px;
+
+		.timeline{
+	      .message-item{
+	      	transform-style: preserve3d;
+	      	perspective: 1000px;
+	      	-webkit-perspective: 1000px;
+	      	-moz-perspective: 1000px;
+	      	persective-origin: 0% 0%;
+	      	
+	      	.message-inner{
+		        transform: rotateY(0deg);
+		        transform: translateY(300px);
+
+		        &.slide{
+		          transform: translateY(0px);
+
+		          &.press{
+			          transform: rotateY(20deg);
+			      }
+		        }
+		      }
+	      }
+	    }
+	}
+}

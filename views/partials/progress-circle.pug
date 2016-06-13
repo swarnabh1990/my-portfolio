@@ -1,0 +1,12 @@
+.radial-panel.text-center
+	.radial-progress.center-block(data-progress= skill.level*20)
+		.circle
+			.mask.full
+				.fill
+			.mask.half
+				.fill
+				.fill.fix
+			.shadow
+		.inset
+			.percentage
+	h4.text-center #{skill.text}

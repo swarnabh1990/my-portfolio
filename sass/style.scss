@@ -1,0 +1,220 @@
+@import 'theme';
+
+body{
+  font-family: $fontFamilyLato !important;
+  //font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  padding: 0;
+  margin: 0;
+  max-width: 100vw;
+}
+
+.circle-div{
+    border-radius: 50%;
+    text-align: center;
+    height: 54px;
+    width: 54px;
+    margin: auto;
+    color: white;
+    background-color: $color-primary;
+    -webkit-box-shadow: 3px 9px 18px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 9px 18px -5px rgba(0,0,0,0.75);
+    box-shadow: 3px 9px 18px -5px rgba(0,0,0,0.75);
+    transition: all 1s ease;
+}
+
+a{
+  .circle-div{
+    &:hover{
+      background-color: $color-secondary;
+    }
+  }
+}
+
+  
+.stretch{
+  padding: 0;
+  margin: 0;
+}
+  
+hr.gradient{
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), $color-secondary, rgba(0, 0, 0, 0));
+}
+
+.vert-middle{
+  position: relative;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.progress{
+  .progress-bar-default{
+    background-color: $color-primary;
+  }
+} 
+
+.progress .progress-bar {
+    -webkit-transition: all 1.5s ease;
+    -moz-transition: all 1.5s ease;
+    transition: none all 1.5s ease;
+}
+
+.btn{
+  .btn-default{
+    background-color: $color-primary 
+  }
+}
+  
+/*
+ * Row with equal height columns
+ * --------------------------------------------------
+ */
+.row-eq-height{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:  flex;
+}
+  
+@media screen and  (min-width: 768px){
+  .table-row{
+    display: table;
+    table-layout: fixed;
+  }
+
+
+  .table-row [class^="col-"]{
+    display: table-cell;
+    float: none;
+  }
+}
+
+figure{
+  margin: auto;
+}
+  
+img{
+  max-width: 100%;
+}
+
+.pad-normal{
+  padding: 20px;
+}
+
+@media screen and  (min-width: 1368px){
+  .pad-normal{
+    padding: 40px 150px;
+  }
+}
+
+  
+.ratio{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 0;
+    //padding-bottom: 100%
+    position: relative;
+    //width: 100%
+}
+.profile-pic{
+  background: {
+    image: url(/images/profile-pic2.jpg);
+  }
+  margin-bottom: 10px;
+  width: 120px;
+  min-height: 120px;
+}
+
+section{
+  .sub-section-head{
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+}
+  
+//parallax
+.head-box{
+  font-family: $fontFamilyLato;
+  position: relative;
+  height: 100vh;
+  background: {
+    image: url(/images/slide10.jpg);
+    //linear-gradient(to right, #5b4f6a, #54606a)
+    size: 125% 100vh;
+    position: top center;
+    attachment: fixed;
+    repeat: no-repeat;
+  }
+  overflow: hidden;
+}
+
+.head-hero{
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 55%;
+  left: 10%;
+  margin-top: -50px;
+  padding: 5px 10px;
+
+  
+  .head-hero-text{
+    margin: 0;
+    font-size: 4em;
+    color: white;
+  }
+    
+  .head-hero-desc{
+    margin: 0;
+    font-size: 2em;
+    font-weight: 500;
+    color: $color-analog;
+  }
+}
+    
+.head-me-foreground{
+  width: 960px;
+  height: 733px;
+  background: {
+    //color: pink
+    image: url(/images/me12.png);
+    size: 500px 733px;
+    repeat: no-repeat;
+    position: right bottom;
+  }
+  position: absolute;
+  left: 60%;
+  margin-left: -480px;
+  top: 200px;
+}
+  
+.head-back-img{
+  width: 960px;
+  height: 298px;
+  background: {
+    image: url(/images/back-bird.png);
+    repeat: no-repeat;
+    position: top left;
+  }
+  position: absolute;
+  left: 50%;
+  margin-left: -480px;
+}
+
+//content
+
+@import 'intro';
+
+@import 'skills';
+
+@import 'timeline';
+
+@import 'bar-graph';
+
+@import 'exp';
+
+@import 'contact';
+
+@import 'skills-bar';

@@ -1,0 +1,96 @@
+section#exp.pad-normal
+	.container-fluid
+		.row
+			.col-xs-12.col-md-4.exp-timeline
+				h3.sub-section-head
+					b Work 
+					span(style="font-weight: 300") Experience
+				include exp_timeline.pug
+			.col-xs-12.col-md-8.exp-panel
+				h3.sub-section-head
+					b Job 
+					span(style="font-weight: 300") Desc
+				.tab-content
+					#exp-servion.tab-pane.active.fade.in(role="tabpanel") 
+						.exp-detail
+							h4
+								b Responsibilities
+							ul.role-desc
+								li Built a tool using Twitter Web API/Facebook Web API and Python to simulate thousands of customer care reps communicating with thousands of customers simultaneously and asynchronously. Tweepy library used for interfacing Python with twitter API. Facebook Python SDK used for interfacing Python with Facebook API.
+								li Softphone application connectors for Avaya CTI using ASP. NET MVC and JavaScript.
+
+							br
+
+							h4
+								b Technology Used
+							ul.skill-set.list-inline
+								each skill in skills
+									if skill.categories.indexOf("servion") > -1
+										li= skill.text
+
+					#exp-softtek.tab-pane.fade(role="tabpanel")
+						.exp-detail
+							h4
+								b Responsibilities
+							ul.role-desc
+								li Agile development practices followed using JIRA.
+								li Source Control through GitHub. and MS Team Foundation Server.
+								li Handling direct communication and brainstorming with stakeholders and product owners to perform Requirement Elicitation and Analysis.
+								li Developed Global Product Administration portal using latest web frameworks. Web client was developed using Aurelia JavaScript framework, Bootstrap and JQuery and Node.js.
+								li Developed several REST APIs using ASP.NET WEB API.
+								li Integrated Domain and Data using Entity Framework, LINQ to Entities and MS SQL Server.
+								li Made major contributions in the development and maintenance of core Client Apps using   ASP.NET MVC, ASP.NET Web Forms, Knockout.js, Bootstrap, JQuery.
+								li Implemented Dependency Injection using Ninject DI framework..
+								li Implementing Dependency Injection.
+
+							br
+
+							h4
+								b Technology Used
+							ul.skill-set.list-inline
+								each skill in skills
+									if skill.categories.indexOf("softtek") > -1
+										li= skill.text
+							
+					#exp-infosys.tab-pane.fade(role="tabpanel")
+						.exp-detail
+							h4
+								b Responsibilities
+							ul.role-desc
+								li Onsite/Client site Coordinator for the project.
+								li Handling direct communication and brainstorming with client to perform Requirement Elicitation and Analysis to produce well documented Use Cases and DLDs.
+								li Collaborate with client and end users, developers, and QA, to prioritize needs and maintenance change requests.
+								li Provide full lifecycle support from requirements elicitation and analysis through design, coding, testing, debugging, implementation, integration and deployment.
+								li Initiate and oversee the migration of the existing Legacy system OSIRIS developed using FORTE to latest Microsoft technologies and incorporate many new features and much needed changes in existing features.
+								li Migrated the current single tier system to multi-tier Service Oriented architecture (SOA) using Microsoft Windows Communication Services (WCF) and Request Response Design Pattern for client-Server interaction.
+								li Data layer implementation using Microsoft Entity Framework (EF) and LINQ to Entities. Also created many PL/SQL stored procedures, functions and Jobs.
+								li Implementation of a loosely coupled UI system using Model View Presenter (MVP) design pattern in order to leverage high maintainability, easy testing and high provision to plug in different UI forms(Winfoms, Web forms, mobile, etc.).
+								li Implementing Dependency Injection
+								li ASP.NET MVC, Bootstrap, AJAX.
+								li Implementation of Custom UI components.
+
+							br
+
+							h4
+								b Technology Used
+							ul.skill-set.list-inline
+								each skill in skills
+									if skill.categories.indexOf("infosys") > -1
+										li= skill.text
+
+					#exp-tp.tab-pane.fade.in(role="tabpanel") 
+						.exp-detail
+							h4
+								b Responsibilities
+							ul.role-desc
+								li Automated the ongoing manual dispatch management system with an online tool to create and track dispatch requests and perform reporting operations developed using Java Swing Framework and Oracle Database.
+								li Provide full lifecycle support from requirements elicitation and analysis through design, coding, debugging, testing, integration and deployment.
+
+							br
+
+							h4
+								b Technology Used
+							ul.skill-set.list-inline
+								each skill in skills
+									if skill.categories.indexOf("servion") > -1
+										li= skill.text

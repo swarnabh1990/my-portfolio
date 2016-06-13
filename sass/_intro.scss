@@ -1,0 +1,94 @@
+#intro{
+	color: $color-secondary;
+	background: {
+	    image: url(/images/parallax-about.png);
+	    repeat: no-repeat;
+	    size: 400px 400px;
+	    color: #F8F8F8; //#dfdfdf
+	    position: top left;
+	    attachment: fixed;
+	}
+	    
+	.about-text{
+		font-size: 20px;
+		font-weight: 300;
+		text-align: justify;
+	}
+
+	.personal-info{
+		.row{
+			margin-bottom: 20px;
+			font-size: 20px;
+			.col-xs-8{
+				font-weight: 300;
+			}
+		}
+	}
+
+	>.row{
+    	margin-bottom: 30px;
+	}
+
+	.hobbies{
+		li{
+			text-align: center;
+			margin-right: 10px;
+			width: 80px;
+		}
+		p {
+			margin-top: 10px;
+			font-weight: 300;
+			font-size: 1em;
+		}
+	}
+
+	.profile-pic{
+	    background: {
+	      image: url(/images/profile-pic.jpg);
+	    }
+	    margin-bottom: 30px;
+	    width: 150px;
+	    height: 150px;
+	    transition: all 1s ease;
+	    transform: scale(0.2);
+
+	    &.appear{
+	    	transform: scale(1);
+	    }
+	}
+
+	.circle-div{
+		transform: scale(0.2); 
+		&.appear{
+			transform: scale(1); 
+		}
+	}
+
+	div{
+	  .progress{
+	    height: 5px;
+	    overflow: visible;
+	    border-radius: 10px;
+	    .progress-bar{
+
+	      position: relative;
+	      border-radius: 10px;
+	      span{
+	        position: absolute;
+	        width: 50px;
+	        height: 20px;
+	        border-radius: 10px;
+	        right: 0;
+	        top: -8px;
+	      }
+	    }
+	  }	
+	}
+
+	    
+	@media screen and (min-width: 768px){
+	    .profile-pic{
+	      	margin-top: 15%;
+	    }
+	}
+}
