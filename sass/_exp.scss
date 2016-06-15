@@ -10,7 +10,6 @@
 	}
 
 	.exp-panel{
-		padding-left: 40px;
 
 		.tab-content{
 			margin-top: 28px;
@@ -106,5 +105,13 @@
 		      }
 	      }
 	    }
+	}
+}
+
+@media(min-width: 1024px){
+	#exp{
+		.exp-panel{
+			padding-left: 40px;
+		}
 	}
 }
