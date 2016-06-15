@@ -4,13 +4,13 @@
 	    image: url(/images/parallax-about.png);
 	    repeat: no-repeat;
 	    size: 400px 400px;
-	    color: #F8F8F8; //#dfdfdf
+	    color: #F8F8F8;
 	    position: top left;
 	    attachment: fixed;
 	}
 	    
 	.about-text{
-		font-size: 20px;
+		font-size: 1.5em;
 		font-weight: 300;
 		text-align: justify;
 	}
@@ -29,10 +29,11 @@
     	margin-bottom: 30px;
 	}
 
-	.hobbies{
+	.hobbies, .social{
 		li{
 			text-align: center;
 			margin-right: 10px;
+			margin-bottom: 10px;
 			width: 80px;
 		}
 		p {
@@ -49,18 +50,45 @@
 	    margin-bottom: 30px;
 	    width: 150px;
 	    height: 150px;
+
+	    -webkit-transition: all 1s ease;
+	    -moz-transition: all 1s ease;
+	    -ms-transition: all 1s ease;
+	    -o-transition: all 1s ease;
 	    transition: all 1s ease;
+
 	    transform: scale(0.2);
+	    -webkit-transform: scale(0.2);
+	    -moz-transform: scale(0.2);
+	    -ms-transform: scale(0.2);
+	    -o-transform: scale(0.2);
 
 	    &.appear{
 	    	transform: scale(1);
+	    	-webkit-transform: scale(1);
+		    -moz-transform: scale(1);
+		    -ms-transform: scale(1);
+		    -o-transform: scale(1);
 	    }
 	}
 
-	.circle-div{
-		transform: scale(0.2); 
+	.round{
+		-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		-ms-transition: all 1s ease;
+		-o-transition: all 1s ease;
+
+		transform: scale(0.2);
+		-webkit-transform: scale(0.2);
+		-moz-transform: scale(0.2);
+		-ms-transform: scale(0.2);
+		-o-transform: scale(0.2);
 		&.appear{
-			transform: scale(1); 
+			transform: scale(1);
+			-webkit-transform: scale(1);
+			-moz-transform: scale(1);
+			-ms-transform: scale(1);
+			-o-transform: scale(1);
 		}
 	}
 

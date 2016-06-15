@@ -68,7 +68,7 @@ $(document).ready(function(){
         }
 
         if (wScroll > ($('#intro .personal-info').offset().top - $(window).height()/ 1.2)){
-            $('#intro .personal-info .circle-div').each(function(){
+            $('#intro .personal-info .round').each(function(){
                 $(this).addClass('appear');
             });
         }
@@ -78,7 +78,7 @@ $(document).ready(function(){
                 $(this).width($(this).attr('aria-valuenow') + "%");
             });
 
-            $('#intro .hobbies .circle-div').each(function(){
+            $('#intro .hobbies .round').each(function(){
                 $(this).addClass('appear');
             });
         }

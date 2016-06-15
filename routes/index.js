@@ -177,7 +177,7 @@ data = [
 /* GET home page. */
 router.get('/', function(req, res, next) {
     console.log('Hi from index route!');
-  res.render('index', { title: 'Express', skills: data});
+  res.render('index', { title: 'Swarnabh Banerjee | Portfolio', skills: data});
 });
 
 module.exports = router;
