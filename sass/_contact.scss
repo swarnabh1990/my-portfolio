@@ -1,7 +1,7 @@
 #contact{
   height: 700px;
   position: relative;
-  color: $color-secondary;
+  color: white;
   background: {
     color: $color-primary;
     image: url(/images/blur-map.png);
@@ -9,5 +9,11 @@
     size: 100% 700px;
     position: bottom center;
     attachment: fixed;
+  }
+
+  .contact-form{
+    background-color: $color-secondary;
+
+    padding: 20px;
   }
 }

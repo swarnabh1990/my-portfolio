@@ -1,0 +1,33 @@
+extends layout
+
+block content
+	#cfdi
+		//-console.log("Kuch to hai!");
+		.container
+			.row
+				.well
+					h2.text-center CFDI
+					form(id="cfdi-upload", action="/cfdi", method="post", enctype="multipart/form-data")
+						h4 Upload XML(you can select upto 12 files)
+
+						.input-group
+							label.input-group-btn
+								span.btn.btn-primary
+									| Browse... #[input(type="file" style="display: none;", name="cfdi_xml", multiple)]
+							input.form-control(type="text", readonly)
+						br
+						button.btn.btn-primary( type="submit") Upload
+
+			
+			//-console.log(cfdiFiles);
+			.row
+				h2.text-center Available files
+			br
+			each file_set in cfdiFiles
+				.row
+					each file in file_set
+						.col-xs-12.col-md-3
+							a(href="/cfdi/facturas/?id="+file)
+								.thumb
+									.icon
+									.footer= file

@@ -1,0 +1,106 @@
+@import 'theme';
+
+$margin-offset: 20px;
+
+#cfdi{
+	.btn-file {
+		position: relative;
+		overflow: hidden;
+
+		input[type=file] {
+			position: absolute;
+			top: 0;
+			right: 0;
+			min-width: 100%;
+			min-height: 100%;
+			font-size: 100px;
+			text-align: right;
+			filter: alpha(opacity=0);
+			opacity: 0;
+			outline: none;
+			background: white;
+			cursor: inherit;
+			display: block;
+		}
+	}
+
+	a, a:hover, a:link, a:focus, a:visited, a:active{
+		text-decoration: none;
+		color: white;
+	}
+
+	.thumb{
+		height: 250px;
+		width: 250px;
+		position: relative;
+		margin: auto;
+		border: 5px solid $color-secondary-light;
+		border-radius: 5px;
+		transition: all 0.3s ease;
+		transform: scale(1);
+		z-index: 1;
+
+		.icon{
+			background:{
+				color: #F8F8F8;
+				image: url(/images/xml-icon.png);
+				size: 50% 50%;
+				position: center;
+				repeat: no-repeat;
+			}
+			height: 170px;
+			width: auto;
+		}
+
+		.footer{
+			width: auto;
+			height: 75px;
+			padding: 10px 5px;
+			background-color: $color-secondary-light;
+			color: white;
+		}
+
+		&:hover{
+			-webkit-box-shadow: 3px 11px 54px -9px rgba(0,0,0,0.84);
+			-moz-box-shadow: 3px 11px 54px -9px rgba(0,0,0,0.84);
+			box-shadow: 3px 11px 54px -9px rgba(0,0,0,0.84);
+
+			z-index: 10;
+			transform: scale(1.2);
+		}
+	}
+}
+
+#cfdi-factura{
+
+	padding: 50px;
+	//background-color: $color-primary;
+	p{
+		color: $color-secondary;
+		font-weight: bold;
+		font-size: 16px;
+		word-wrap: break-word;
+
+		span{
+			font-weight: normal;
+		}
+	}
+
+	.panel-heading{
+		cursor: pointer;
+		cursor: hand;
+	}
+
+	
+
+	/* .head{
+		width: 100%;
+		h2{
+			background-color: pink;
+			border-radius: 10px;
+			padding: 10px;
+			color: $color-secondary;
+			display: inline-block;
+		}
+	} */
+}

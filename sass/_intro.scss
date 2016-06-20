@@ -19,7 +19,7 @@
 		.row{
 			margin-bottom: 20px;
 			font-size: 20px;
-			.col-xs-8{
+			.col-xs-9, .col-md-8{
 				font-weight: 300;
 			}
 		}
@@ -70,6 +70,12 @@
 		    -ms-transform: scale(1);
 		    -o-transform: scale(1);
 	    }
+	}
+
+	.social{
+		li{
+			margin: 0px;
+		}
 	}
 
 	.round{

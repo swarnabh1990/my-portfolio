@@ -1,0 +1,30 @@
+extends layout 
+
+block content
+    -var Offset = 1;
+    mixin parseFactura(initKey, value)
+        each value, key in value
+            if(key == "$")
+                .well
+                    each v, k in value
+                        p #{k + " : "} #[span= v]
+                
+            else
+                if isNaN(key)
+                    | <div class="panel panel-primary">
+                    | <div class="panel-heading" data-toggle="collapse" data-target="#{"#panel" + Offset}">
+                    |   <h2 class="panel-title">#{key} &nbsp;&nbsp;&nbsp;<i class="fa fa-lg fa-angle-right"></i></h2>
+                    | </div>
+                    | <div id="#{"panel" + Offset}" class="panel-collapse collapse in">
+                    |   <div class="panel-body">
+                    -Offset++;
+                    
+                +parseFactura(key, value)
+        
+        if initKey != null && isNaN(initKey) && initKey != "$"
+            | </div>
+            | </div>
+            | </div>
+
+    #cfdi-factura
+        +parseFactura(null, result)

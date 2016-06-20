@@ -167,6 +167,51 @@ a{
   }
 }
 
+.dropdown {
+    .dropbtn {
+      background-color: $color-secondary;
+      color: white;
+      padding: 5px 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    position: relative;
+    display: inline-block;
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 10;
+
+      a {
+        color: black;
+        padding: 5px 16px;
+        display: block;
+
+        &:link, &:hover, &:visited, &:active{
+          text-decoration: none;
+        }
+
+        &:hover{
+          background-color: $color-secondary-light;
+          color: white;
+        }
+      }
+    }
+
+    &:hover{
+      .dropdown-content{
+        display: block;
+      }
+    }
+}
+
+
 section{
   .sub-section-head{
     margin-bottom: 20px;
@@ -268,3 +313,5 @@ section{
 @import 'contact';
 
 @import 'skills-bar';
+
+@import 'cfdi';

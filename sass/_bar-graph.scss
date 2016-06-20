@@ -13,45 +13,6 @@ $data-label-width: 170px;
 	//border: 1px solid yellow;
 	position: relative;
 
-	.chart-title{
-		color: white;
-
-		li{
-			margin-right: 20px;
-			padding-right: 10px;
-			padding-left: 10px;
-
-			transition: all 0.5s ease;
-			-webkit-transition: all 1s ease;
-			-moz-transition: all 1s ease;
-			-ms-transition: all 1s ease;
-			-o-transition: all 1s ease;
-
-			a{
-				&:link, &:hover, &:visited, &:active{
-					text-decoration: none;
-					color: white;
-				}
-			}
-
-			&.active{
-				background-color: $color-secondary;
-			}
-
-			&:not(.active){
-				&:hover{
-					background-color: $color-secondary-light;
-				}
-			}
-		}
-
-	}
-
-	ul{
-		list-style: none;
-		padding-left: 0;
-	}
-
 	.chart-legend{
 		//border: 1px solid red;
 		height: $container-height;
@@ -59,6 +20,7 @@ $data-label-width: 170px;
 		margin: 0;
 		padding: 0;
 		width: 100%;
+		list-style: none;
 
 		li{
 			position: relative;
@@ -75,6 +37,57 @@ $data-label-width: 170px;
 		}
 
 	}
+
+	.dropdown{
+		.dropdown-toggle {
+			background-color: $color-secondary-light;
+			padding: 5px 12px;
+			cursor: pointer; 
+			cursor: hand;
+			-webkit-transition: all 0.5s ease;
+			-moz-transition: all 0.5s ease;
+			-ms-transition: all 0.5s ease;
+			-o-transition: all 0.5s ease;
+			transition: all 0.5s ease;
+
+			h4, i{
+				display: inline-block;
+			}
+
+			i{
+				margin-left: 5px;
+			}
+
+			&:hover{
+				background-color: $color-secondary;
+			}
+		}
+
+		.dropdown-menu{
+			border-radius: 0;
+			margin-top: 0;
+
+			a{
+				color: $color-secondary;
+
+				&:hover{
+					color: white;
+					background-color: $color-secondary-light;
+				}
+			}
+
+			> .active{
+				> a{
+					background-color: transparentize($color-secondary-light, 0.7);
+					&:hover{
+						color: white;
+						background-color: $color-secondary-light;
+					}
+				}
+			}
+		}
+	}
+
 }
 
 @media(max-width: 1024px){
@@ -108,9 +121,8 @@ $data-label-width: 170px;
 
 		.chart-data{
 			width: 85%;
-			height: $container-height - $legend-margin-top - 50px;
-			margin-top: $legend-margin-top + 10px;
-			width: 100%;
+			
+			//width: 100%;
 			//border: 1px solid red;
 			padding-left: 0;
 			li{
@@ -125,15 +137,15 @@ $data-label-width: 170px;
 					position: absolute;
 					top: 30%;
 					left: 0;
-					width: 0;
+					width: auto;
 					height: 40%;
 					background-color: $color-secondary-light;
 
-					-webkit-box-shadow: 9px 5px 51px -10px rgba(0,0,0,0.75);
-					-moz-box-shadow: 9px 5px 51px -10px rgba(0,0,0,0.75);
-					-ms-box-shadow: 9px 5px 51px -10px rgba(0,0,0,0.75);
-					-o-box-shadow: 9px 5px 51px -10px rgba(0,0,0,0.75);
-					box-shadow: 9px 5px 51px -10px rgba(0,0,0,0.75);
+					-webkit-box-shadow: 10px 12px 26px -6px rgba(0,0,0,0.75);
+					-moz-box-shadow: 10px 12px 26px -6px rgba(0,0,0,0.75);
+					-ms-box-shadow: 10px 12px 26px -6px rgba(0,0,0,0.75);
+					-o-box-shadow: 10px 12px 26px -6px rgba(0,0,0,0.75);
+					box-shadow: 10px 12px 26px -6px rgba(0,0,0,0.75);
 
 					.data-label{
 						display: table;
@@ -169,30 +181,64 @@ $data-label-width: 170px;
 				}
 			}
 		}
+
+		.skill-slideshow { 
+			//display: none;
+			position: relative; 
+			width: 100%;
+			height: $container-height - $legend-margin-top - 50px;
+			margin-top: $legend-margin-top;
+			//border: 1px solid pink;
+			overflow: hidden;
+
+			> .skill-set { 
+				//border: 1px solid red;
+				position: absolute; 
+				top: 0px; 
+				left: 0px; 
+				right: 0px; 
+				bottom: 0px;
+
+				.chart-data{
+					height: 100%;
+					width: 100%;
+					margin-top: 0;
+					li{
+						width: 100%;
+						/* .data-label{
+							min-width: 200px;
+						} */
+					}
+				}
+			}
+		}
 	}
 }
 
 @media(min-width: 1024px){
 	.skills-chart{
+		//border: 1px solid red;
 		
 		.chart-legend{
+			//border: 1px solid white;
 			border-bottom: 1px solid $color-secondary;
 			height: $container-height - $legend-margin-top - 50px;
 			margin-top: $legend-margin-top/2;
+			list-style: none;
 			li{
 				display: block;
 				width: 100%;
 				height: 20%;
-				border-bottom: 1px solid transparentize($color-secondary, 0.7);
+				border-top: 1px solid transparentize($color-secondary, 0.7);
 
 				.legend-label{
 					position: absolute;
 					right: 0;
-					bottom: 0;
+					top: 0;
 					width: $legend-label-width;
-					padding-right: 5px;
-					padding-bottom: 5px;
-					border-right: 5px solid $color-secondary-light;
+					text-align: center;
+					border-right: 5px solid $color-secondary;
+					background-color: $color-secondary-light;
 				}
 			}
 		}
@@ -200,20 +246,21 @@ $data-label-width: 170px;
 		.chart-data{
 			//border: 1px solid yellow;
 			width: 80%;
-			height: $container-height - $legend-margin-top - 40px;
-			margin-top: $legend-margin-top/2;
+			padding-left: 0; 
+			/* height: $container-height - $legend-margin-top - 40px;
+			margin-top: $legend-margin-top/2; */
 			li{
 				position: relative;
-				height: $container-height - $legend-margin-top - 42px;
+				//height: $container-height - $legend-margin-top - 40px;
 				display: inline-block;
 				width: 20%;
-				//border: 1px solid yellow;
+				//border: 1px solid white;
 
 				.data-bar{
 					position: absolute;
 					bottom: 0;
 					left: 30%;
-					height: 0%;
+					height: auto;
 					width: 40%;
 					background-color: $color-secondary;
 
@@ -226,7 +273,7 @@ $data-label-width: 170px;
 					.data-label{
 						position: absolute;
 						bottom: 0;
-						width: $data-label-width;
+						min-width: $data-label-width;
 						//border: 1px solid red;
 
 						transform: rotate(50deg) translate(60px, 60px);
@@ -261,7 +308,7 @@ $data-label-width: 170px;
 			//display: none;
 			position: relative; 
 			width: 80%;
-			height: $container-height - $legend-margin-top - 42px;
+			height: $container-height - $legend-margin-top - 50px;
 			margin-top: $legend-margin-top/2;
 			//border: 1px solid pink;
 
@@ -277,6 +324,9 @@ $data-label-width: 170px;
 					height: 100%;
 					width: 100%;
 					margin-top: 0;
+					li{
+						height: 100%;
+					}
 				}
 			}
 		}

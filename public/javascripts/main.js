@@ -27,6 +27,10 @@ function init() {
 
 var skillChartAnim = null;
 var sizeWatch = '';
+var color_primary = "#3AA8DB";
+var color_secondary = "#18465B";
+var color_secondary_light = "#2E86AF";
+var color_analog = "#CAA669";
 
 $(document).ready(function(){
 
@@ -44,6 +48,27 @@ $(document).ready(function(){
     });
 
     var pContainerHeight = $('.head-box').height();
+
+    $(document).on('change', ':file', function() {
+        var input = $(this),
+        numFiles = input.get(0).files ? input.get(0).files.length : 1,
+        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [numFiles, label]);
+    });
+
+    $(':file').on('fileselect', function(event, numFiles, label) {
+
+        var input = $(this).parents('.input-group').find(':text'),
+        log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+        if( input.length ) {
+            input.val(log);
+        } 
+        else {
+            if( log ) alert(log);
+        }
+
+    });
 
     $(window).scroll(function () {
         var wScroll = $(this).scrollTop();
@@ -115,6 +140,36 @@ $(document).ready(function(){
 
     skillChartSetup();
 
+    $('#skills-edu .skill-slideshow:first > .skill-set:gt(0)').hide();
+
+   // alert($('#skills-edu .skills-chart .chart-title > li:first').html());
+    /*$('#skills-edu .skills-chart .chart-title').width($('#skills-edu .skills-chart .chart-title > li:first').width());
+
+    $('#skills-edu .skills-chart .chart-title').height($('#skills-edu .skills-chart .chart-title > li:first').height());
+    */
+    /*$('#skills-edu .skills-chart .chart-title ').on('mouseover', function(){
+        $('#skills-edu .skills-chart .chart-title').animate({width: "100%"}, "slow");
+    });*/
+
+    $('#cfdi-upload').submit(function() {
+        $(this).ajaxSubmit({
+            error: function(err) {
+                console.log('Something! --- ' + err.status);
+
+                for(var i in err){
+                    console.log(i + ' --- ' + err[i]);
+                }
+
+                alert('Error: ' + err.status);
+            },
+
+            success: function(res) {
+                swal("Upload successful!", "CFDI xml uploaded successfuly", "success");
+            }
+         });
+        return false;
+    });
+
     $('#exp .timeline .message-inner').on('click', function(){
         $('#exp .timeline .message-item.active').removeClass('active');
         $('#exp .timeline .message-inner.active').removeClass('active');
@@ -125,14 +180,27 @@ $(document).ready(function(){
 
     });
 
+
     $('#exp .timeline .message-inner').on('mousedown', function(){
         $(this).css("transition", "background-color 0.5s ease, transform 0.2s ease");
         $(this).addClass('press');
     });
 
-    $('#skills-edu .skill-slideshow:first > .skill-set:gt(0)').hide();
+    // ADD SLIDEDOWN ANIMATION TO DROPDOWN //
+    $('.dropdown').on('show.bs.dropdown', function (e) {
+        $(this).find('.dropdown-toggle').css('background-color', color_secondary);
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+    });
 
-    //$('#skills-edu').height($('#skills-edu').height() + 100);
+    // ADD SLIDEUP ANIMATION TO DROPDOWN //
+    $('.dropdown').on('hide.bs.dropdown', function (e) {
+        $(this).find('.dropdown-toggle').css('background-color', color_secondary_light);
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+    });
+
+    $("#skills-edu .dropdown .dropdown-menu li a").click(function(){
+        $("#skills-edu .dropdown .dropdown-toggle").html($(this).html() + '<i class="fa fa-lg fa-angle-down"></i>');
+    });
 
     $('#skills-edu .skills-chart .chart-title a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         var target = $(e.target).attr("href") // activated tab
@@ -154,7 +222,7 @@ $(document).ready(function(){
                           $('#skills-edu ' + target + ' .skill-slideshow > .skill-set:first')
                             .fadeOut(1000, function(){
                                 $(this).find('.chart-data .data-bar').each(function(){
-                                    $(this).height(0);
+                                    $(this).removeAttr('style');
                                 });
                             })
                             .next()
@@ -180,7 +248,8 @@ $(document).ready(function(){
                           $('#skills-edu ' + target + ' .skill-slideshow > .skill-set:first')
                             .fadeOut(1000, function(){
                                 $(this).find('.chart-data .data-bar').each(function(){
-                                    $(this).width(0);
+                                    //$(this).width(0);
+                                    $(this).removeAttr('style');
                                 });
                             })
                             .next()
@@ -210,8 +279,14 @@ $(document).ready(function(){
 
 function setSkillChartLegend(){
     var list = $('#skills-edu .skills-chart ul.chart-legend');
-    var listItems = list.children('li');
-    list.append(listItems.get().reverse());
+    console.log(list.find("> li:first > .legend-label").text());
+    var firstLegend = list.find("> li:first > .legend-label").text();
+    if ((firstLegend == "Novice" && $(window).width() >= 1024) || (firstLegend != "Novice" && $(window).width() < 1024)) {
+        console.log('Reversing');
+        var listItems = list.children('li');
+        list.append(listItems.get().reverse());
+    }
+    
 }
 
 function skillChartSetup(){
@@ -242,7 +317,7 @@ function skillChartSetup(){
               $('#skills-edu .skills-chart .tab-content .tab-pane.active .skill-slideshow > .skill-set:first')
                 .fadeOut(1000, function(){
                     $(this).find('.chart-data .data-bar').each(function(){
-                        $(this).height(0);
+                        $(this).removeAttr('style');
                     });
                 })
                 .next()
@@ -286,7 +361,7 @@ function skillChartSetup(){
                 .fadeOut(1000, function(){
                     console.log('small');
                     $(this).find('.chart-data .data-bar').each(function(){
-                        $(this).width(0);
+                        $(this).removeAttr('style');
                     });
                 })
                 .next()

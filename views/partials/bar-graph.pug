@@ -38,33 +38,43 @@ mixin chart-data-slideshow(skills, category)
 
 
 .skills-chart
-	ul.chart-title.list-inline(role="tablist")
-		li.active(role="presentation")
-			a(href="#ms", aria-controls="ms", role="tab", data-toggle="tab")
+	.chart-title.text-center
+		.dropdown
+			#skill-sets.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
 				h4 #[b Microsoft] #[span(style="font-weight: 300") Technologies]
-		li(role="presentation")
-			a(href="#web", aria-controls="web", role="tab", data-toggle="tab")
-				h4 #[b Web] #[span(style="font-weight: 300") Technologies]
-		li(role="presentation")
-			a(href="#patterns", aria-controls="patterns", role="tab", data-toggle="tab")
-				h4 #[b Design] #[span(style="font-weight: 300") Patterns]
-		li(role="presentation")
-			a(href="#db", aria-controls="db", role="tab", data-toggle="tab")
-				h4 #[b Database] #[span(style="font-weight: 300") Technologies]
-		//- li(role="presentation")
-		//- 	a(href="#tools", aria-controls="tools", role="tab", data-toggle="tab")
-		//- 		h4 #[b Tools] #[span(style="font-weight: 300") & Frameworks]
+				i.fa.fa-lg.fa-angle-down
+			ul.dropdown-menu(aria-labelledby='skill-sets')
+				li
+					a(href="#web", aria-controls="web", role="tab", data-toggle="tab")
+						h4 #[b Microsoft] #[span(style="font-weight: 300") Technologies]
+				li
+					a(href="#web", aria-controls="web", role="tab", data-toggle="tab")
+						h4 #[b Web] #[span(style="font-weight: 300") Technologies]
+				li
+					a(href="#patterns", aria-controls="patterns", role="tab", data-toggle="tab")
+						h4 #[b Design] #[span(style="font-weight: 300") Patterns]
+				li
+					a(href="#db", aria-controls="db", role="tab", data-toggle="tab")
+						h4 #[b Database] #[span(style="font-weight: 300") Technologies]
+				li
+					a(href="#tools", aria-controls="tools", role="tab", data-toggle="tab")
+						h4 #[b Tools] #[span(style="font-weight: 300") & Frameworks]
 	ul.chart-legend
 		li
-			span.legend-label #[strong Uh?] #[br] Next question?
+			span.legend-label #[strong Novice]
+			//- #[br] Next question?
 		li
-			span.legend-label #[strong Basic], you can't #[br] always win!
+			span.legend-label #[strong Basic]
+			//- , you can't #[br] always win!
 		li
-			span.legend-label #[strong Medium], I'm trying #[br] to improve
+			span.legend-label #[strong Medium]
+			//- , I'm trying #[br] to improve
 		li
-			span.legend-label #[strong High], #[br] I m pretty good!
+			span.legend-label #[strong High]
+			//- , #[br] I m pretty good!
 		li
-			span.legend-label #[strong I'm the master], #[br] of the universe!
+			span.legend-label #[strong Ninja]
+			//- , #[br] of the universe!
 
 	.tab-content
 		#ms.tab-pane.active.fade.in(role="tabpanel") 

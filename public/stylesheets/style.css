@@ -125,6 +125,35 @@ a .round.hollow:hover {
 a .round:hover {
   background-color: #18465B; }
 
+.dropdown {
+  position: relative;
+  display: inline-block; }
+  .dropdown .dropbtn {
+    background-color: #18465B;
+    color: white;
+    padding: 5px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer; }
+  .dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10; }
+    .dropdown .dropdown-content a {
+      color: black;
+      padding: 5px 16px;
+      display: block; }
+      .dropdown .dropdown-content a:link, .dropdown .dropdown-content a:hover, .dropdown .dropdown-content a:visited, .dropdown .dropdown-content a:active {
+        text-decoration: none; }
+      .dropdown .dropdown-content a:hover {
+        background-color: #2E86AF;
+        color: white; }
+  .dropdown:hover .dropdown-content {
+    display: block; }
+
 section .sub-section-head {
   margin-bottom: 20px;
   font-size: 1.75em; }
@@ -199,7 +228,7 @@ section .sub-section-head {
   #intro .personal-info .row {
     margin-bottom: 20px;
     font-size: 20px; }
-    #intro .personal-info .row .col-xs-8 {
+    #intro .personal-info .row .col-xs-9, #intro .personal-info .row .col-md-8 {
       font-weight: 300; }
   #intro > .row {
     margin-bottom: 30px; }
@@ -233,6 +262,8 @@ section .sub-section-head {
       -moz-transform: scale(1);
       -ms-transform: scale(1);
       -o-transform: scale(1); }
+  #intro .social li {
+    margin: 0px; }
   #intro .round {
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -420,33 +451,13 @@ section .sub-section-head {
   margin-top: 28px;
   margin-bottom: 100px;
   position: relative; }
-  .skills-chart .chart-title {
-    color: white; }
-    .skills-chart .chart-title li {
-      margin-right: 20px;
-      padding-right: 10px;
-      padding-left: 10px;
-      transition: all 0.5s ease;
-      -webkit-transition: all 1s ease;
-      -moz-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-      -o-transition: all 1s ease; }
-      .skills-chart .chart-title li a:link, .skills-chart .chart-title li a:hover, .skills-chart .chart-title li a:visited, .skills-chart .chart-title li a:active {
-        text-decoration: none;
-        color: white; }
-      .skills-chart .chart-title li.active {
-        background-color: #18465B; }
-      .skills-chart .chart-title li:not(.active):hover {
-        background-color: #2E86AF; }
-  .skills-chart ul {
-    list-style: none;
-    padding-left: 0; }
   .skills-chart .chart-legend {
     height: 500px;
     position: absolute;
     margin: 0;
     padding: 0;
-    width: 100%; }
+    width: 100%;
+    list-style: none; }
     .skills-chart .chart-legend li {
       position: relative;
       height: 500px;
@@ -456,6 +467,35 @@ section .sub-section-head {
       .skills-chart .chart-legend li .legend-label {
         float: right;
         font-weight: 300; }
+  .skills-chart .dropdown .dropdown-toggle {
+    background-color: #2E86AF;
+    padding: 5px 12px;
+    cursor: pointer;
+    cursor: hand;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+    .skills-chart .dropdown .dropdown-toggle h4, .skills-chart .dropdown .dropdown-toggle i {
+      display: inline-block; }
+    .skills-chart .dropdown .dropdown-toggle i {
+      margin-left: 5px; }
+    .skills-chart .dropdown .dropdown-toggle:hover {
+      background-color: #18465B; }
+  .skills-chart .dropdown .dropdown-menu {
+    border-radius: 0;
+    margin-top: 0; }
+    .skills-chart .dropdown .dropdown-menu a {
+      color: #18465B; }
+      .skills-chart .dropdown .dropdown-menu a:hover {
+        color: white;
+        background-color: #2E86AF; }
+    .skills-chart .dropdown .dropdown-menu > .active > a {
+      background-color: rgba(46, 134, 175, 0.3); }
+      .skills-chart .dropdown .dropdown-menu > .active > a:hover {
+        color: white;
+        background-color: #2E86AF; }
 
 @media (max-width: 1024px) {
   .skills-chart .chart-legend {
@@ -479,9 +519,6 @@ section .sub-section-head {
         padding-right: 20px; }
   .skills-chart .chart-data {
     width: 85%;
-    height: 350px;
-    margin-top: 110px;
-    width: 100%;
     padding-left: 0; }
     .skills-chart .chart-data li {
       position: relative;
@@ -492,14 +529,14 @@ section .sub-section-head {
         position: absolute;
         top: 30%;
         left: 0;
-        width: 0;
+        width: auto;
         height: 40%;
         background-color: #2E86AF;
-        -webkit-box-shadow: 9px 5px 51px -10px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 9px 5px 51px -10px rgba(0, 0, 0, 0.75);
-        -ms-box-shadow: 9px 5px 51px -10px rgba(0, 0, 0, 0.75);
-        -o-box-shadow: 9px 5px 51px -10px rgba(0, 0, 0, 0.75);
-        box-shadow: 9px 5px 51px -10px rgba(0, 0, 0, 0.75); }
+        -webkit-box-shadow: 10px 12px 26px -6px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 12px 26px -6px rgba(0, 0, 0, 0.75);
+        -ms-box-shadow: 10px 12px 26px -6px rgba(0, 0, 0, 0.75);
+        -o-box-shadow: 10px 12px 26px -6px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 12px 26px -6px rgba(0, 0, 0, 0.75); }
         .skills-chart .chart-data li .data-bar .data-label {
           display: table;
           width: auto;
@@ -523,40 +560,62 @@ section .sub-section-head {
         bottom: 0;
         width: 10px;
         height: 1px;
-        border-bottom: 1px solid #18465B; } }
+        border-bottom: 1px solid #18465B; }
+  .skills-chart .skill-slideshow {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    margin-top: 100px;
+    overflow: hidden; }
+    .skills-chart .skill-slideshow > .skill-set {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px; }
+      .skills-chart .skill-slideshow > .skill-set .chart-data {
+        height: 100%;
+        width: 100%;
+        margin-top: 0; }
+        .skills-chart .skill-slideshow > .skill-set .chart-data li {
+          width: 100%;
+          /* .data-label{
+							min-width: 200px;
+						} */ } }
 
 @media (min-width: 1024px) {
   .skills-chart .chart-legend {
     border-bottom: 1px solid #18465B;
     height: 350px;
-    margin-top: 50px; }
+    margin-top: 50px;
+    list-style: none; }
     .skills-chart .chart-legend li {
       display: block;
       width: 100%;
       height: 20%;
-      border-bottom: 1px solid rgba(24, 70, 91, 0.3); }
+      border-top: 1px solid rgba(24, 70, 91, 0.3); }
       .skills-chart .chart-legend li .legend-label {
         position: absolute;
         right: 0;
-        bottom: 0;
+        top: 0;
         width: 130px;
-        padding-right: 5px;
-        padding-bottom: 5px;
-        border-right: 5px solid #2E86AF; }
+        text-align: center;
+        border-right: 5px solid #18465B;
+        background-color: #2E86AF; }
   .skills-chart .chart-data {
     width: 80%;
-    height: 360px;
-    margin-top: 50px; }
+    padding-left: 0;
+    /* height: $container-height - $legend-margin-top - 40px;
+			margin-top: $legend-margin-top/2; */ }
     .skills-chart .chart-data li {
       position: relative;
-      height: 358px;
       display: inline-block;
       width: 20%; }
       .skills-chart .chart-data li .data-bar {
         position: absolute;
         bottom: 0;
         left: 30%;
-        height: 0%;
+        height: auto;
         width: 40%;
         background-color: #18465B;
         -webkit-box-shadow: 9px 5px 51px -10px rgba(0, 0, 0, 0.75);
@@ -567,7 +626,7 @@ section .sub-section-head {
         .skills-chart .chart-data li .data-bar .data-label {
           position: absolute;
           bottom: 0;
-          width: 170px;
+          min-width: 170px;
           transform: rotate(50deg) translate(60px, 60px);
           -webkit-transform: rotate(50deg) translate(60px, 60px);
           -moz-transform: rotate(50deg) translate(60px, 60px);
@@ -590,7 +649,7 @@ section .sub-section-head {
   .skills-chart .skill-slideshow {
     position: relative;
     width: 80%;
-    height: 358px;
+    height: 350px;
     margin-top: 50px; }
     .skills-chart .skill-slideshow > .skill-set {
       position: absolute;
@@ -601,7 +660,9 @@ section .sub-section-head {
       .skills-chart .skill-slideshow > .skill-set .chart-data {
         height: 100%;
         width: 100%;
-        margin-top: 0; } }
+        margin-top: 0; }
+        .skills-chart .skill-slideshow > .skill-set .chart-data li {
+          height: 100%; } }
 
 #exp {
   color: #18465B;
@@ -684,13 +745,16 @@ section .sub-section-head {
 #contact {
   height: 700px;
   position: relative;
-  color: #18465B;
+  color: white;
   background-color: #3AA8DB;
   background-image: url(/images/blur-map.png);
   background-repeat: no-repeat;
   background-size: 100% 700px;
   background-position: bottom center;
   background-attachment: fixed; }
+  #contact .contact-form {
+    background-color: #18465B;
+    padding: 20px; }
 
 .skillbar {
   position: relative;
@@ -761,3 +825,79 @@ section .sub-section-head {
   height: 35px;
   line-height: 35px;
   color: #18465B; }
+
+#cfdi .btn-file {
+  position: relative;
+  overflow: hidden; }
+  #cfdi .btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block; }
+
+#cfdi a, #cfdi a:hover, #cfdi a:link, #cfdi a:focus, #cfdi a:visited, #cfdi a:active {
+  text-decoration: none;
+  color: white; }
+
+#cfdi .thumb {
+  height: 250px;
+  width: 250px;
+  position: relative;
+  margin: auto;
+  border: 5px solid #2E86AF;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  z-index: 1; }
+  #cfdi .thumb .icon {
+    background-color: #F8F8F8;
+    background-image: url(/images/xml-icon.png);
+    background-size: 50% 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 170px;
+    width: auto; }
+  #cfdi .thumb .footer {
+    width: auto;
+    height: 75px;
+    padding: 10px 5px;
+    background-color: #2E86AF;
+    color: white; }
+  #cfdi .thumb:hover {
+    -webkit-box-shadow: 3px 11px 54px -9px rgba(0, 0, 0, 0.84);
+    -moz-box-shadow: 3px 11px 54px -9px rgba(0, 0, 0, 0.84);
+    box-shadow: 3px 11px 54px -9px rgba(0, 0, 0, 0.84);
+    z-index: 10;
+    transform: scale(1.2); }
+
+#cfdi-factura {
+  padding: 50px;
+  /* .head{
+		width: 100%;
+		h2{
+			background-color: pink;
+			border-radius: 10px;
+			padding: 10px;
+			color: $color-secondary;
+			display: inline-block;
+		}
+	} */ }
+  #cfdi-factura p {
+    color: #18465B;
+    font-weight: bold;
+    font-size: 16px;
+    word-wrap: break-word; }
+    #cfdi-factura p span {
+      font-weight: normal; }
+  #cfdi-factura .panel-heading {
+    cursor: pointer;
+    cursor: hand; }
